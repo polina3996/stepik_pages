@@ -1,5 +1,5 @@
-from PageObject.base_page import BasePage
-from locators import LoginPageLocators
+from pages.PageObject.base_page import BasePage
+from pages.locators import LoginPageLocators
 #заглушки для методов проверок
 
 class LoginPage(BasePage):

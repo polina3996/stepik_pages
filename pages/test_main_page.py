@@ -1,7 +1,7 @@
 from pages.PageObject.main_page import MainPage
-from login_page import LoginPage
+from pages.login_page import LoginPage
 
-#ОСНОВНАЯ ЛОГИКА ТЕСТОВ
+#ОСНОВНАЯ ЛОГИКА ТЕСТОВ ДЛЯ ГЛАВНОЙ СТР
 link =  "http://selenium1py.pythonanywhere.com/"
 def test_guest_should_see_login_link(browser):
     page = MainPage(browser, link)

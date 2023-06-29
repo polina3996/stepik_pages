@@ -1,14 +1,17 @@
 from pages.PageObject.base_page import BasePage
 from pages.locators import MainPageLocators
-from pages.login_page import LoginPage #импорт страницы с логином
-
+from pages.login_page import LoginPage # 1 способ: импорт страницы с логином
 
 class MainPage(BasePage): #наследуется от базового класса - КЛАСС ДЛЯ КЛИКАНИЙ И МЕЛКИХ ФРОНТЕНД ДЕЙСТВИЙ
     def should_be_login_link(self): #проверка наличия ссылки на лог-ин(вызов метода из баз класса, чтобы обработать исключение и сделать осмысленный вывод)
         assert self.is_element_present(*MainPageLocators.LOGIN_LINK), "Login link is not presented" #берем из класса локаторов его атрибут(кортеж, распаковывается)
     def go_to_login_page(self): #переход на логин-стр
-        self.is_element_present(*MainPageLocators.LOGIN_LINK).click() #берем из класса локаторов его атрибут(кортеж, распаковывается)
+        self.browser.find_element(*MainPageLocators.LOGIN_LINK).click() #берем из класса локаторов его атрибут(кортеж, распаковывается)
         #return LoginPage(self.browser, self.browser.current_url) # 1 способ: проинициализировать новый объект Page и вернуть его. Обратите внимание! При создании объекта мы обязательно передаем ему тот же самый объект драйвера для работы с браузером, а в качестве url передаем текущий адрес.
+
+        # self.browser.switch_to.alert.accept()  Добавив обработку alert, мы восстановим работоспособность всех тестов, не меняя самих тестов:
+
+
 
     #Это хорошая практика: писать сначала красные тесты и только потом делать их зелеными.
 
