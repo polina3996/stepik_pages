@@ -17,3 +17,4 @@ class ProductPageLocators:
     ADD_TO_BASKET_BUTTON = (By.CLASS_NAME, 'btn-add-to-basket')
     ADDED_BOOK = (By.XPATH, '(//div[@class ="alertinner "]/strong)[1]')
     BASKET_PRICE = (By.XPATH, '(//div[@class="alertinner "]/p/strong)[1]')
+    SUCCESS_MESSAGE = (By.XPATH, '(//div[@class ="alertinner "])[1]')
