@@ -21,9 +21,8 @@ class ProductPage(BasePage):
 
     def should_not_be_success_message(self):  # появляется сообщение об успешном добавлении в корзину
         # true - не появился, а время вышло; false д.быть - появился(увидим сообщение ассерт)
-        assert self.is_not_element_present(
-            *ProductPageLocators.SUCCESS_MESSAGE), "Success message is presented, but should not be"
+        return self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE)
 
     def message_is_deleted(self):  # сообщение исчезает из корзины
         # true д.быть
-        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), 'Message is still there'
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE) is False, 'Message disappears'
