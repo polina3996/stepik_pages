@@ -12,8 +12,8 @@ class LoginPageLocators:
 
 
 class ProductPageLocators:
-    ADD_TO_BASKET_BUTTON = (By.CLASS_NAME, 'btn-add-to-basket')
     BOOK_NAME = (By.TAG_NAME, 'h1')
+    BOOK_PRICE = (By.XPATH, '//p[@class="price_color"]')
+    ADD_TO_BASKET_BUTTON = (By.CLASS_NAME, 'btn-add-to-basket')
     ADDED_BOOK = (By.XPATH, '(//div[@class ="alertinner "]/strong)[1]')
     BASKET_PRICE = (By.XPATH, '(//div[@class="alertinner "]/p/strong)[1]')
-    BOOK_PRICE = (By.XPATH, '//p[@class="price_color"]')
