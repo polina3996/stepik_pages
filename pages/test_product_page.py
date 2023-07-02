@@ -1,5 +1,6 @@
 import pytest
 
+from pages.PageObject.basket_page import BasketPage
 from pages.PageObject.product_page import ProductPage
 
 link = 'http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209/?promo=newYear'
@@ -36,7 +37,7 @@ def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
     page.open()
     page.add_to_basket()
     page.solve_quiz_and_get_code()
-    assert page.should_not_be_success_message() is False, "Success message is not presented"  # проверка, что нет сообщения об успешном доб в корзину ПОСЛЕ ДОБАВЛЕНИЯ
+    assert page.should_not_be_success_message() is False, "Success message is not presented"  # проверка, что есть сообщение об успешном доб в корзину ПОСЛЕ ДОБАВЛЕНИЯ
 
 
 def test_guest_cant_see_success_message(browser):
@@ -63,3 +64,12 @@ def test_guest_can_go_to_login_page_from_product_page(browser):
     page = ProductPage(browser, link2)
     page.open()
     page.go_to_login_page()
+
+
+def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
+    page = ProductPage(browser, link)
+    page.open()
+    page.go_to_basket_page()
+    basket_page = BasketPage(browser, browser.current_url)
+    assert basket_page.basket_has_no_inner(), 'Basket is not empty'
+    assert basket_page.basket_has_text(), 'There is no text that basket is empty'

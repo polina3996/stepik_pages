@@ -6,7 +6,8 @@ from selenium.webdriver.common.by import By
 
 class BasePageLocators:  # переход на логин находится на любой стр, поэтому общие локаторы
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
-    #LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    # LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    BASKET_LINK = (By.XPATH, '//span[@class="btn-group"]/a')
 
 
 class MainPageLocators:  # теперь каждый селектор — это пара: как искать и что искать(чтобы менять селектор в 1 месте
@@ -26,3 +27,8 @@ class ProductPageLocators:
     ADDED_BOOK = (By.XPATH, '(//div[@class ="alertinner "]/strong)[1]')
     BASKET_PRICE = (By.XPATH, '(//div[@class="alertinner "]/p/strong)[1]')
     SUCCESS_MESSAGE = (By.XPATH, '(//div[@class ="alertinner "])[1]')
+
+
+class BasketPageLocators:
+    BASKET_INNER = (By.ID, 'basket_formset')
+    BASKET_TEXT = (By.XPATH, '//p')
