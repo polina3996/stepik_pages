@@ -108,3 +108,7 @@ class BasePage:  # базовая страница=1 класс, от кот н�
 
     def go_to_basket_page(self): #переход в корзину
         self.browser.find_element(*BasePageLocators.BASKET_LINK).click()
+
+    def should_be_authorized_user(self): #проверка что залогинен
+        assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
+                                                                     " probably unauthorised user"

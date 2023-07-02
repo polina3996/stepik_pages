@@ -8,6 +8,7 @@ class BasePageLocators:  # переход на логин находится н�
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     # LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
     BASKET_LINK = (By.XPATH, '//span[@class="btn-group"]/a')
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
 
 
 class MainPageLocators:  # теперь каждый селектор — это пара: как искать и что искать(чтобы менять селектор в 1 месте
@@ -18,6 +19,10 @@ class MainPageLocators:  # теперь каждый селектор — это
 class LoginPageLocators:
     LOGIN_FORM = (By.ID, "login_form")
     REGISTER_FORM = (By.ID, "register_form")
+    EMAIL = (By.ID, 'id_registration-email')
+    PASSWORD = (By.ID, 'id_registration-password1')
+    REPEAT_PASSWORD = (By.ID, 'id_registration-password2')
+    REGISTRATION = (By.XPATH, '(//button)[4]')
 
 
 class ProductPageLocators:
@@ -32,3 +37,4 @@ class ProductPageLocators:
 class BasketPageLocators:
     BASKET_INNER = (By.ID, 'basket_formset')
     BASKET_TEXT = (By.XPATH, '//p')
+
