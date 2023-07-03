@@ -1,0 +1,5 @@
+pytest==7.4.0s
+selenium==4.10.0
+math
+time
+

@@ -1,19 +1,10 @@
 from selenium.webdriver.common.by import By
 
 
-# Когда мы выносим селекторы в отдельную сущность, мы уменьшаем время на поддержку тестов и сильно упрощаем себе
-# жизнь в долгосрочной перспективе.
-
-class BasePageLocators:  # переход на логин находится на любой стр, поэтому общие локаторы
+class BasePageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
-    # LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
     BASKET_LINK = (By.XPATH, '//span[@class="btn-group"]/a')
     USER_ICON = (By.CSS_SELECTOR, ".icon-user")
-
-
-class MainPageLocators:  # теперь каждый селектор — это пара: как искать и что искать(чтобы менять селектор в 1 месте
-    # только)
-    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
 
 
 class LoginPageLocators:
@@ -37,4 +28,3 @@ class ProductPageLocators:
 class BasketPageLocators:
     BASKET_INNER = (By.ID, 'basket_formset')
     BASKET_TEXT = (By.XPATH, '//p')
-
